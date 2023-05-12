@@ -9,9 +9,9 @@ public function Mostrar(){
     $Tarea=$Tareas->Mostrar();
     return  $Tarea;
 }
-public function Buscar($Mitexto ){
+public function Buscar($MiTexto ){
     $Tareas=new DTarea();
-    return  $Tareas->Buscar($Mitexto);
+    return  $Tareas->Buscar($MiTexto);
 }
 
 public function Insertar($Titulo,$Descripcion,$Fecha){

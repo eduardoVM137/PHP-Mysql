@@ -12,80 +12,48 @@
     require_once 'Conexion.php';
        $conexion=new ConexionMysql();
        $conexion->AbrirConexion();
-       $consulta=mysqli_query($conexion->conexion,'Select * from tarea'); 
+       $consulta=mysqli_query($conexion->get_connection(),'call spMostrar_Tareas()'); 
        $conexion->CerrarConexion();
         return $consulta;
    }
 
-    public function   Buscar( $Mitexto)
-    {
-
-
-                  
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname = "prueba";
-
-// Crear la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-// Definir los parámetros
- 
-// Preparar la sentencia SQL con el procedimiento almacenado y los parámetros
-$stmt = $conn->prepare("CALL spBuscar_Tarea(?)");
-
-// Vincular los parámetros a la sentencia preparada
-$stmt->bind_param("s", $Mitexto);
-// Ejecutar la consulta
-$stmt->execute();
-
-// Obtener el resultado de la consulta
-$result = $stmt->get_result();
-
-
-
-        // require_once 'Conexion.php';
-        //   $conexion=new ConexionMysql();
-        //   $conexion->AbrirConexion();
-        //   $consulta=mysqli_query($conexion->conexion,'call spBuscar_Tarea('.$MiBuscar.')'); 
-        //   $conexion->CerrarConexion();
-          return $result;
-    }
-      public function  Insertar(DTarea $Mitarea)
+    public function Buscar($MiTexto)
       {
-      
-                  
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "prueba";
-        
-        // Crear la conexión
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        
-        // Verificar la conexión
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
-        }
-                $stmt = $conn->prepare("CALL spInsertar_Tarea(?, ?, ?)");
+        require_once 'Conexion.php';
+        $ClaseConexcion=new ConexionMysql();
+        $ClaseConexcion->AbrirConexion();
+        $MiConexcion=$ClaseConexcion->get_connection();
+        // Preparar la sentencia SQL con el procedimiento almacenado y los parámetros
+        $stmt = $MiConexcion->prepare("CALL spBuscar_Tarea(?)");
+        // Vincular los parámetros a la sentencia preparada
+        $stmt->bind_param("s", $MiTexto);
+        // Ejecutar la consulta y almacenarla
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $ClaseConexcion->CerrarConexion();
+        // $stmt->close();
+        // $MiConexcion->close(); 
 
-                // Vincular los parámetros a la sentencia preparada
-                $stmt->bind_param("sss", $Mitarea->_strTitulo, $Mitarea->_strDescripcion, $Mitarea->_dtFecha);
+            
+       return $result;
+      }
+    public function  Insertar(DTarea $Mitarea)
+      {
+        //Llamar a la Clase ConexcionMysql y crear una conexcion 
+        require_once 'Conexion.php';
+        $ClaseConexcion=new ConexionMysql();
+        $ClaseConexcion->AbrirConexion();
+        $MiConexcion=$ClaseConexcion->get_connection();          
+        //Preparar nuestro procedimiento con la conexion creada
+        $stmt = $MiConexcion->prepare("CALL spInsertar_Tarea(?, ?, ?)");
+        // Vincular los parámetros a la sentencia preparada
+        $stmt->bind_param("sss", $Mitarea->_strTitulo, $Mitarea->_strDescripcion, $Mitarea->_dtFecha);
 
-                // Ejecutar la consulta
-                $stmt->execute();
-
-                // Cerrar la conexión y liberar recursos
-                $stmt->close();
-                $conn->close();
-           
-    }
+        // Ejecutar la consulta
+        $stmt->execute();
+        $ClaseConexcion->CerrarConexion();
+        return "Se inserto de forma Correcta";
+      }
 
 
 }

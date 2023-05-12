@@ -10,55 +10,37 @@
 
 <body>
     
+    <form method="POST" action="PTarea.php">
+        <select  id="id_opciones"  name="opciones">
+            
 
-    <?php
-        $MiTexto="DEscripcion";
-require_once 'NTarea.php';
-$Tareas=new NTarea(); 
-$Buscar=$Tareas->Buscar($MiTexto); 
-echo "<table border=1>";
-echo "<tr><th>ID Tarea</th> <th>Titulo</th> <th>Descripcion</th></tr>"; 
-       while ($fila=mysqli_fetch_assoc($Buscar)) {
-           echo "<tr>";
-           echo "<td>".$fila['idTarea']."</td>";
-           echo "<td>".$fila['Titulo']."</td>";
-           echo "<td>".$fila['Descripcion']."</td>"; 
-           echo "</tr>";
-       }
-       echo "</table>";
+            <?php
+                //Buscar Registro desde el select
+                require_once 'NTarea.php';
+                $Tareas=new NTarea(); 
+                $Buscar=    $Tareas->Mostrar(); 
+                    while ($fila=mysqli_fetch_assoc($Buscar)) 
+                        {
+                            echo "<option value=".$fila['Descripcion'].">".$fila['Descripcion']."</option>"; 
+                        }
 
-        ?>
- 
- <select id="opciones" name="opciones"> 
-    <?php
+                
+            ?>
+                
+        <input type="submit" value="Guardar">
+        </select>
 
-require_once 'NTarea.php';
-$Tareas=new NTarea(); 
-$Buscar=    $Tareas->Mostrar();  
-echo "<tr><th>ID Tarea</th> <th>Titulo</th> <th>Descripcion</th></tr>"; 
-       while ($fila=mysqli_fetch_assoc($Buscar)) {
-        echo "<option value=".$fila['Descripcion'].">".$fila['Descripcion']."</option>"; 
-       }
-
-
-    // Iterar sobre los datos del arreglo y generar las opciones del select
-    foreach ($opciones as $valor => $etiqueta) {
-        echo "<option value='$valor'>$etiqueta</option>";
-
-
-
-    }
-    ?>
-</select>
-
-    <p>
-    <?php  
-
-
+    </form>
+  
+    <?php   //Mostrar Registros
 
        require_once 'NTarea.php';
         $Tareas=new NTarea();
-        $Buscar=    $Tareas->Mostrar();  
+
+        // $Tareas->Insertar("Mi Nuevo Titulo "," Mi Nueva Descripcion","12-05-2023");
+        // $Tareas->Insertar("CRUD Para Programacion WEB"," Desarrollarlo en PHP y MyQsl","12-05-2023");
+
+        $Buscar=$Tareas->Mostrar();  
         echo "<table border=1>";
         echo "<tr><th>ID Tarea</th> <th>Titulo</th> <th>Descripcion</th></tr>"; 
                while ($fila=mysqli_fetch_assoc($Buscar)) {
@@ -70,12 +52,9 @@ echo "<tr><th>ID Tarea</th> <th>Titulo</th> <th>Descripcion</th></tr>";
                }
                echo "</table>";
 
-
-
                
-        ?>
+    ?>
      
-    <p> 
 </body>
 
 </html>
