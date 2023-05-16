@@ -1,19 +1,17 @@
 
 <?php 
-class ConexionMysql{ 
+class ConexionMysql{ //automatizar para siempre tene la conexion abierta cuando tienes un constructo
 private $conexion;
-public function AbrirConexion(){
-  //  $this->conexion=mysqli_connect('localhost','root','','prueba');
+public function __construct(){
+    $this->conexion = new mysqli('localhost','root','','prueba');
+      if(!$this->conexion){
+          die('Error de  coenxion: '.mysqli_connect_error());
+      
+      }
   
-  $this->conexion = new mysqli('localhost','root','','prueba');
-    if(!$this->conexion){
-        die('Error de  coenxion: '.mysqli_connect_error());
-    
-    }
-
-  
-
 }
+
+
 public function get_connection(){
     return $this->conexion;
 }
