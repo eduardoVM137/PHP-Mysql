@@ -1,0 +1,21 @@
+
+
+function guardarRegistro() {
+    var nombre = document.getElementById("titulo").value; 
+    if (accionActual === "insertar") {
+      // Llamar al método de inserción en PHP y enviar los valores
+      
+    var respuesta = confirm("¿Está seguro de nuevo el registro: "+titulo+"?");
+    
+      insertarRegistro(nombre, fecha);
+    } else if (accionActual === "editar") {
+      // Llamar al método de edición en PHP y enviar los valores junto con el ID del registro
+ 
+      var respuesta = confirm("¿Está seguro de nuevo el registro: "+titulo+"?");
+    }
+    
+    // Cerrar el modal
+    document.getElementById("modalCRUD").style.display = "none";
+  }
+
+});

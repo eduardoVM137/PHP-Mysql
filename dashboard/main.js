@@ -3,7 +3,7 @@ $(document).ready(function(){
        "columnDefs":[{
         "targets": -1,
         "data":null,
-        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"  
+        "defaultContent": "<div class='text-center'><div class='btn-group'><button name ='accion' value ='editar'class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"  
        }],
         
     "language": {
@@ -31,6 +31,9 @@ $("#btnNuevo").click(function(){
     $("#modalCRUD").modal("show");        
     id=null;
     opcion = 1; //alta
+    
+ 
+
 });    
     
 var fila; //capturar la fila para editar o borrar el registro
@@ -76,28 +79,24 @@ $(document).on("click", ".btnBorrar", function(){
         });
     }   
 });
+
+
+function guardarRegistro() {
+    var nombre = document.getElementById("titulo").value; 
+    if (accionActual === "insertar") {
+      // Llamar al método de inserción en PHP y enviar los valores
+      
+    var respuesta = confirm("¿Está seguro de nuevo el registro: "+titulo+"?");
     
-$("#formPersonas").submit(function(e){
-    e.preventDefault();    
-    id = $.trim($("#id").val());
-    descripcion = $.trim($("#descripcion").val()); 
-    fecha = $.trim($("#fecha").val()); 
-    $.ajax({
-        url: "bd/crud.php",
-        type: "POST",
-        dataType: "json",
-        data: {opcion:opcion,id:id,titulo:titulo, descripcion:descripcion},
-        success: function(data){  
-            console.log(data);
-            id = data[0].id;            
-            titulo = data[0].titulo;
-            descripcion = data[0].descripcion;
-            if(opcion == 1){tablaPersonas.row.add([id,titulo,descripcion]).draw();}
-            else{tablaPersonas.row(fila).data([id,titulo,descripcion]).draw();}            
-        }        
-    });
-    $("#formPersonas").modal("hide");    
+      insertarRegistro(nombre, fecha);
+    } else if (accionActual === "editar") {
+      // Llamar al método de edición en PHP y enviar los valores junto con el ID del registro
+ 
+      var respuesta = confirm("¿Está seguro de nuevo el registro: "+titulo+"?");
+    }
     
-});    
-    
+    // Cerrar el modal
+    document.getElementById("modalCRUD").style.display = "none";
+  }
+
 });

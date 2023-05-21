@@ -10,8 +10,7 @@ $Id = (isset($_POST['id'])) ? $_POST['id'] : '';
 $Titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : '';
 $Descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : '';
 
-$archivo = 'C:\xampp\htdocs\dashboard\bd\Errores.txts';
-$texto = "hola ".$Descripcion;
+
 
 
 switch($opcion){

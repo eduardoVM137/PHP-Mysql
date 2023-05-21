@@ -15,7 +15,7 @@ if (isset($_POST['opciones'])){
     // Obtener el valor del select
     $Descripcion = $_POST['opciones'];
   
-         require_once 'C:\xampp\htdocs\Controlador\NTarea.php';
+         require_once 'C:\XAMMP\htdocs\Controlador\NTarea.php';
          $Tareas=new NTarea();
           $Buscar= $Tareas->Buscar($Descripcion);  
           echo "<table id=tablaPersonas class=table table-striped table-sm>";

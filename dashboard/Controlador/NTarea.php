@@ -4,14 +4,14 @@
 
 public function Mostrar(){
     
-require_once 'C:\xampp\htdocs\dashboard\Modelo\DTarea.php';
+require_once 'C:\XAMMP\htdocs\dashboard\Modelo\DTarea.php';
     $Tareas=new DTarea();
     $Tarea=$Tareas->Mostrar();
     return  $Tarea;
 }
 public function Buscar($MiTexto){
     
-require_once 'C:\xampp\htdocs\dashboard\Modelo\DTarea.php';
+require_once 'C:\XAMMP\htdocs\dashboard\Modelo\DTarea.php';
     $Tareas=new DTarea();
     return  $Tareas->Buscar($MiTexto);
 }

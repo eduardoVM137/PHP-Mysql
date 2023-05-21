@@ -1,4 +1,10 @@
-<?php require_once "./vistas/parte_superior.php"?>
+<?php 
+
+require_once "./vistas/parte_superior.php";
+
+
+
+?>
 
 <!--INICIO del cont principal-->
 <div class="container">
@@ -7,14 +13,13 @@
     
     
 
-
-<div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">            
-            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Nuevo</button>    
+            <button id="btnNuevo" name="accion" type="button" value="insertar" class="btn btn-success" data-toggle="modal">Nuevo</button>    
             </div>    
         </div>    
-    </div>    
+    </div>   
     <br>  
 <div class="container">
         <div class="row">
@@ -67,11 +72,11 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        <form id="formPersonas">    
+            <form id="formPersonas" method="post" action="Recivir.php" >
             <div class="modal-body">
             <div class="form-group">
                 <label for="idtarea" class="col-form-label">ID:</label>
-                <input type="text" class="form-control" id="idtarea">
+                <input type="text" class="form-control" id="idtarea" name="idtarea">
                 </div> 
                 <div class="form-group">
                 <label for="titulo" class="col-form-label">Titulo:</label>
@@ -88,33 +93,29 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>
+                <button type="submit"  name ="Guardar" id="btnGuardar" class="btn btn-dark" onclick="guardarRegistro()">Guardar</button>
             </div>
         </form>    
         </div>
     </div>
 </div>  
-      
-    <?php 
-    
-$archivo = 'C:\xampp\htdocs\dashboard\bd\Errores.txts';
-$texto = "Este es un ejemplo de texto.";
 
-file_put_contents($archivo, $texto);
-
-// Leer y mostrar el contenido del archivo en la consola
-$contenido = file_get_contents($archivo);
-
-echo $contenido;
-
-file_put_contents($archivo, $texto);
-
-// Leer y mostrar el contenido del archivo en la consola
-$contenido = file_get_contents($archivo);
-
-echo $contenido;
-    ?>
     
 </div>
 <!--FIN del cont principal-->
-<?php require_once 'C:\xampp\htdocs\dashboard\vistas\parte_inferior.php'?>
+<?php require_once 'C:\XAMMP\htdocs\dashboard\vistas\parte_inferior.php'?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
