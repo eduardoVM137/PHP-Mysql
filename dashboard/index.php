@@ -93,7 +93,11 @@ require_once "./vistas/parte_superior.php";
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+<<<<<<< HEAD
                 <button type="submit"  name ="Guardar" id="btnGuardar" class="btn btn-dark" onclick="guardarRegistro()">Guardar</button>
+=======
+                <button type="submit"  name ="Guardar" id="btnGuardar" class="btn btn-dark">Guardar</button>
+>>>>>>> 3d9b48d (comit funcional)
             </div>
         </form>    
         </div>
@@ -103,7 +107,11 @@ require_once "./vistas/parte_superior.php";
     
 </div>
 <!--FIN del cont principal-->
+<<<<<<< HEAD
 <?php require_once 'C:\XAMMP\htdocs\dashboard\vistas\parte_inferior.php'?>
+=======
+<?php require_once 'C:\XAMPP\htdocs\dashboard\vistas\parte_inferior.php'?>
+>>>>>>> 3d9b48d (comit funcional)
 
 
 

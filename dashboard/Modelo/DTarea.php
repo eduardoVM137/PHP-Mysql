@@ -9,7 +9,11 @@
 
    public function  Mostrar()
    {
+<<<<<<< HEAD
     require_once 'C:\XAMMP\htdocs\dashboard\Conexion.php';
+=======
+    require_once 'C:\XAMPP\htdocs\dashboard\Conexion.php';
+>>>>>>> 3d9b48d (comit funcional)
        $conexion=new ConexionMysql();
        $consulta=mysqli_query($conexion->get_connection(),'call spMostrar_Tareas()'); 
        $conexion->CerrarConexion();
@@ -38,7 +42,11 @@
       public function  Insertar(DTarea $Mitarea)
       {
         //Llamar a la Clase ConexcionMysql y crear una conexcion 
+<<<<<<< HEAD
         require_once 'C:\XAMMP\htdocs\dashboard\Conexion.php';
+=======
+        require_once 'C:\XAMPP\htdocs\dashboard\Conexion.php';
+>>>>>>> 3d9b48d (comit funcional)
         $ClaseConexcion=new ConexionMysql();
         $MiConexcion=$ClaseConexcion->get_connection();          
         //Preparar nuestro procedimiento con la conexion creada
@@ -70,7 +78,11 @@
       public function  Eliminar(DTarea $Mitarea)
       {
         //Llamar a la Clase ConexcionMysql y crear una conexcion 
+<<<<<<< HEAD
         require_once 'C:\XAMMP\htdocs\dashboard\Conexion.php';
+=======
+        require_once 'C:\XAMPP\htdocs\dashboard\Conexion.php';
+>>>>>>> 3d9b48d (comit funcional)
         $ClaseConexcion=new ConexionMysql();
         $MiConexcion=$ClaseConexcion->get_connection();          
         //Preparar nuestro procedimiento con la conexion creada

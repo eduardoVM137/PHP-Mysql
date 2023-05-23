@@ -6,7 +6,11 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
+<<<<<<< HEAD
             <span>Copyright &copy; Your Website 2019</span>
+=======
+            <span>Por: &copy; Eduardo Villagomez</span>
+>>>>>>> 3d9b48d (comit funcional)
           </div>
         </div>
       </footer>

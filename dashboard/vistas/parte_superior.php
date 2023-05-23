@@ -18,7 +18,11 @@ if($_SESSION["s_usuario"] === null){
   <meta name="description" content="">
   <meta name="author" content="">
 
+<<<<<<< HEAD
   <title>SB Admin 2 - Dashboard</title>
+=======
+  <title>Lista de Tareas</title>
+>>>>>>> 3d9b48d (comit funcional)
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,7 +51,11 @@ if($_SESSION["s_usuario"] === null){
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
+<<<<<<< HEAD
         <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+=======
+        <div class="sidebar-brand-text mx-3">Mis Tareas</div>
+>>>>>>> 3d9b48d (comit funcional)
       </a>
 
       <!-- Divider -->
@@ -57,7 +65,11 @@ if($_SESSION["s_usuario"] === null){
       <li class="nav-item active">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
+<<<<<<< HEAD
           <span>Dashboard</span></a>
+=======
+          <span>Lista de Tareas</span></a>
+>>>>>>> 3d9b48d (comit funcional)
       </li>
 
       <!-- Divider -->
@@ -72,6 +84,7 @@ if($_SESSION["s_usuario"] === null){
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
+<<<<<<< HEAD
           <span>Components</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -79,6 +92,15 @@ if($_SESSION["s_usuario"] === null){
             <h6 class="collapse-header">Custom Components:</h6>
             <a class="collapse-item" href="buttons.php">Buttons</a>
             <a class="collapse-item" href="cards.php">Cards</a>
+=======
+          <span>Categorias</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Filtros:</h6>
+            <a class="collapse-item" href="buttons.php">Tareas Pendientes</a>
+            <a class="collapse-item" href="cards.php">Tareas Finalizadas</a>
+>>>>>>> 3d9b48d (comit funcional)
           </div>
         </div>
       </li>
@@ -136,6 +158,7 @@ if($_SESSION["s_usuario"] === null){
               </div>
             </li>
 
+<<<<<<< HEAD
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -240,6 +263,9 @@ if($_SESSION["s_usuario"] === null){
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
               </div>
             </li>
+=======
+       
+>>>>>>> 3d9b48d (comit funcional)
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -252,6 +278,7 @@ if($_SESSION["s_usuario"] === null){
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+<<<<<<< HEAD
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
@@ -264,6 +291,9 @@ if($_SESSION["s_usuario"] === null){
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
                 </a>
+=======
+           
+>>>>>>> 3d9b48d (comit funcional)
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -274,5 +304,9 @@ if($_SESSION["s_usuario"] === null){
 
           </ul>
 
+<<<<<<< HEAD
         </nav>
         <!-- End of Topbar -->
+=======
+        </nav> 
+>>>>>>> 3d9b48d (comit funcional)
